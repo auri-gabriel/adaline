@@ -1,6 +1,6 @@
 pub struct Adaline {
     w: [f64; 2],
-    x: f64,
+    x: [[f64; 4]; 2],
     d: [f64; 4],
     b: f64,
     y: f64,
@@ -13,8 +13,14 @@ impl Adaline {
         todo!()
     }
 
-    fn propaga(i: i32) -> f64 {
-        todo!()
+    fn propaga(self, i: i32) -> f64 {
+        self.soma = 0.;
+
+        for j in 0..2 {
+            self.soma += self.x[i][j] * self.w[j];
+        }
+
+        self.soma + self.b
     }
 
     fn atualiza_pesos(i: i32, y_im: f64) -> () {}
