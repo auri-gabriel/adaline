@@ -9,8 +9,30 @@ pub struct Adaline {
 }
 
 impl Adaline {
-    fn treinamento(maxiterates: i32) -> () {
-        todo!()
+    fn treinamento(self, maxiterates: i32) -> () {
+        let y_intern: f64;
+
+        for k in 0..maxiterates {
+            let hits: i32 = 0;
+
+            for i in 0..4 {
+                y_intern = self.propaga(i);
+
+                self.y = self.f(y_intern);
+
+                self.atualiza_pesos(i, y_intern);
+
+                if self.y >= self.d[i] {
+                    hits += 1;
+                } else {
+                    self.atualiza_bias(i);
+                }
+            }
+
+            if hits == 4 {
+                println!("Aprendizado concluido com {} iterações", k)
+            }
+        }
     }
 
     fn propaga(self, i: usize) -> f64 {
@@ -29,10 +51,9 @@ impl Adaline {
         }
     }
 
-    fn atualiza_bias(i: i32) -> () {
+    fn atualiza_bias(self, i: usize) -> () {
         todo!()
     }
-
     fn apresenta_resultados(self) -> () {
         todo!()
     }
@@ -41,6 +62,10 @@ impl Adaline {
         for i in 0..4 {
             self.d[i] = A[i];
         }
+    }
+
+    fn f(&self, y_intern: f64) -> f64 {
+        todo!()
     }
 }
 
