@@ -9,6 +9,26 @@ pub struct Adaline {
 }
 
 impl Adaline {
+    pub fn new(
+        w: [f64; 2],
+        x: [[f64; 4]; 2],
+        d: [f64; 4],
+        b: f64,
+        y: f64,
+        soma: f64,
+        eta: f64,
+    ) -> Self {
+        Self {
+            w,
+            x,
+            d,
+            b,
+            y,
+            soma,
+            eta,
+        }
+    }
+
     fn treinamento(self, maxiterates: i32) -> () {
         let y_intern: f64;
 
