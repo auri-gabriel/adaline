@@ -58,9 +58,9 @@ impl Adaline {
         todo!()
     }
 
-    fn cria_treinamento(self, A: [f64]) -> () {
+    fn cria_treinamento(mut self, a: [f64; 4]) -> () {
         for i in 0..4 {
-            self.d[i] = A[i];
+            self.d[i] = a[i];
         }
     }
 
