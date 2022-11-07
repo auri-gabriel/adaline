@@ -29,11 +29,11 @@ impl Adaline {
         }
     }
 
-    fn treinamento(self, maxiterates: i32) -> () {
-        let y_intern: f64;
+    fn treinamento(mut self, maxiterates: i32) -> () {
+        let mut y_intern: f64;
 
         for k in 0..maxiterates {
-            let hits: i32 = 0;
+            let mut hits: i32 = 0;
 
             for i in 0..4 {
                 y_intern = self.propaga(i);
@@ -55,7 +55,7 @@ impl Adaline {
         }
     }
 
-    fn propaga(self, i: usize) -> f64 {
+    fn propaga(mut self, i: usize) -> f64 {
         self.soma = 0.;
 
         for j in 0..2 {
@@ -65,7 +65,7 @@ impl Adaline {
         self.soma + self.b
     }
 
-    fn atualiza_pesos(self, i: usize, y_res: f64) -> () {
+    fn atualiza_pesos(mut self, i: usize, y_res: f64) -> () {
         for j in 0..2 {
             self.w[j] += self.eta * (self.d[j] - y_res) * self.x[i][j];
         }
