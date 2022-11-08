@@ -10,19 +10,11 @@ pub struct Adaline {
 }
 
 impl Adaline {
-    pub fn new(
-        w: [f64; 2],
-        x: [[f64; 2]; 4],
-        d: [f64; 4],
-        b: f64,
-        y: f64,
-        soma: f64,
-        eta: f64,
-    ) -> Self {
+    pub fn new(w: [f64; 2], x: [[f64; 2]; 4], b: f64, y: f64, soma: f64, eta: f64) -> Self {
         Self {
             w,
             x,
-            d,
+            d: [0., 0., 0., 0.],
             b,
             y,
             soma,
@@ -114,7 +106,7 @@ fn main() {
 
     let soma = 0.0;
 
-    let adaline = Adaline::new(w, x, d, b, y, soma, eta);
+    let adaline = Adaline::new(w, x, b, y, soma, eta);
 
     println!("Hello, world!");
 }
