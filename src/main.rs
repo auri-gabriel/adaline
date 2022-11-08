@@ -1,7 +1,7 @@
 #[derive(Copy, Clone)]
 pub struct Adaline {
     w: [f64; 2],
-    x: [[f64; 4]; 2],
+    x: [[f64; 2]; 4],
     d: [f64; 4],
     b: f64,
     y: f64,
@@ -12,7 +12,7 @@ pub struct Adaline {
 impl Adaline {
     pub fn new(
         w: [f64; 2],
-        x: [[f64; 4]; 2],
+        x: [[f64; 2]; 4],
         d: [f64; 4],
         b: f64,
         y: f64,
@@ -104,13 +104,17 @@ fn main() {
     x[3][0] = 1.0;
     x[3][1] = -1.0;
 
-    let b = 0;
+    let d = [1., 1., 1., 1.];
 
-    let y = 0;
+    let b = 0.;
+
+    let y = 0.;
 
     let eta = 0.1;
 
     let soma = 0.0;
+
+    let adaline = Adaline::new(w, x, d, b, y, soma, eta);
 
     println!("Hello, world!");
 }
