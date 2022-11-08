@@ -10,7 +10,30 @@ pub struct Adaline {
 }
 
 impl Adaline {
-    pub fn new(w: [f64; 2], x: [[f64; 2]; 4], b: f64, y: f64, soma: f64, eta: f64) -> Self {
+    pub fn new() -> Self {
+        let w = [0.0, 0.0];
+
+        let mut x = [[0f64; 2]; 4];
+
+        x[0][0] = -1.0;
+        x[0][1] = -1.0;
+        x[1][0] = 1.0;
+        x[1][1] = 1.0;
+        x[2][0] = -1.0;
+        x[2][1] = 1.0;
+        x[3][0] = 1.0;
+        x[3][1] = -1.0;
+
+        let d = [1., 1., 1., 1.];
+
+        let b = 0.;
+
+        let y = 0.;
+
+        let eta = 0.1;
+
+        let soma = 0.0;
+
         Self {
             w,
             x,
@@ -77,36 +100,13 @@ impl Adaline {
         }
     }
 
-    fn f(&self, y_intern: f64) -> f64 {
-        todo!()
+    fn f(&self, arg: f64) -> f64 {
+        tanh(arg * ganho)
     }
 }
 
 fn main() {
-    let w = [0.0, 0.0];
-
-    let mut x = [[0f64; 2]; 4];
-
-    x[0][0] = -1.0;
-    x[0][1] = -1.0;
-    x[1][0] = 1.0;
-    x[1][1] = 1.0;
-    x[2][0] = -1.0;
-    x[2][1] = 1.0;
-    x[3][0] = 1.0;
-    x[3][1] = -1.0;
-
-    let d = [1., 1., 1., 1.];
-
-    let b = 0.;
-
-    let y = 0.;
-
-    let eta = 0.1;
-
-    let soma = 0.0;
-
-    let adaline = Adaline::new(w, x, b, y, soma, eta);
+    let adaline = Adaline::new();
 
     println!("Hello, world!");
 }
