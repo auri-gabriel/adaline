@@ -132,4 +132,5 @@ fn main() {
     adaline.cria_treinamento(or);
     adaline.treinamento(1000000);
     println!("Hello, world!");
+    adaline.apresenta_resultados();
 }
