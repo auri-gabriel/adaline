@@ -126,7 +126,12 @@ impl Adaline {
 }
 
 fn main() {
+    let AND = [-1., 1., -1., -1.];
+    let OR = [-1., 1., 1., 1.];
+
     let adaline = Adaline::new();
 
+    adaline.cria_treinamento(OR);
+    adaline.treinamento(1000000);
     println!("Hello, world!");
 }
