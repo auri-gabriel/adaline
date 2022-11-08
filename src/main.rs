@@ -28,8 +28,6 @@ impl Adaline {
         x[3][0] = 1.0;
         x[3][1] = -1.0;
 
-        let d = [1., 1., 1., 1.];
-
         let b = 0.;
 
         let y = 0.;
@@ -126,12 +124,12 @@ impl Adaline {
 }
 
 fn main() {
-    let AND = [-1., 1., -1., -1.];
-    let OR = [-1., 1., 1., 1.];
+    let and = [-1., 1., -1., -1.];
+    let or = [-1., 1., 1., 1.];
 
     let adaline = Adaline::new();
 
-    adaline.cria_treinamento(OR);
+    adaline.cria_treinamento(or);
     adaline.treinamento(1000000);
     println!("Hello, world!");
 }
