@@ -1,4 +1,4 @@
-use libm::atanh;
+use libm::tanh;
 
 const GANHO: f64 = 100.0;
 
@@ -121,7 +121,7 @@ impl Adaline {
     }
 
     fn f(&self, arg: f64) -> f64 {
-        atanh(arg * GANHO)
+        tanh(arg * GANHO)
     }
 }
 
