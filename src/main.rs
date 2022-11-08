@@ -94,8 +94,24 @@ impl Adaline {
     fn atualiza_bias(self, i: usize) -> () {
         todo!()
     }
+    /*
+    void Adaline::Apresenta_Resultados()
+    {
+        for (int l=0; l<4; l++)
+            cout << l << "-th x[0]=" << x[l][0]<<" x[1]=" << x[l][1] <<" saida=" << f(Propaga(l))<< endl;
+    }
+    */
+
     fn apresenta_resultados(self) -> () {
-        todo!()
+        for l in 0..4 {
+            println!(
+                "{} -th x[0]= {} ; x[1]= {} ; saida = {}",
+                l,
+                self.x[l][0],
+                self.x[l][0],
+                self.f(self.propaga(l))
+            );
+        }
     }
 
     fn cria_treinamento(mut self, a: [f64; 4]) -> () {
