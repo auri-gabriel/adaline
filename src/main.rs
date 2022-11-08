@@ -47,7 +47,7 @@ impl Adaline {
         }
     }
 
-    fn treinamento(mut self, maxiterates: i32) -> () {
+    fn treinamento(&mut self, maxiterates: i32) -> () {
         let mut y_interm: f64;
 
         for k in 0..maxiterates {
@@ -73,7 +73,7 @@ impl Adaline {
         }
     }
 
-    fn propaga(mut self, i: usize) -> f64 {
+    fn propaga(&mut self, i: usize) -> f64 {
         self.soma = 0.;
 
         for j in 0..2 {
@@ -83,13 +83,13 @@ impl Adaline {
         self.soma + self.b
     }
 
-    fn atualiza_pesos(mut self, i: usize, y_res: f64) -> () {
+    fn atualiza_pesos(&mut self, i: usize, y_res: f64) -> () {
         for j in 0..2 {
             self.w[j] += self.eta * (self.d[j] - y_res) * self.x[i][j];
         }
     }
 
-    fn atualiza_bias(mut self, i: usize) -> () {
+    fn atualiza_bias(&mut self, i: usize) -> () {
         self.b += self.eta * (self.d[i] - 0.);
     }
     /*
@@ -112,7 +112,7 @@ impl Adaline {
         }
     }
 
-    fn cria_treinamento(mut self, a: [f64; 4]) -> () {
+    fn cria_treinamento(&mut self, a: [f64; 4]) -> () {
         for i in 0..4 {
             self.d[i] = a[i];
         }
@@ -127,10 +127,9 @@ fn main() {
     let and = [-1., 1., -1., -1.];
     let or = [-1., 1., 1., 1.];
 
-    let adaline = Adaline::new();
+    let mut adaline = Adaline::new();
 
     adaline.cria_treinamento(or);
     adaline.treinamento(1000000);
-    println!("Hello, world!");
     adaline.apresenta_resultados();
 }
