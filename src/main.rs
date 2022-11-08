@@ -1,3 +1,7 @@
+use libm::atanh;
+
+const GANHO: f64 = 100.0;
+
 #[derive(Copy, Clone)]
 pub struct Adaline {
     w: [f64; 2],
@@ -101,7 +105,7 @@ impl Adaline {
     }
 
     fn f(&self, arg: f64) -> f64 {
-        tanh(arg * ganho)
+        atanh(arg * GANHO)
     }
 }
 
