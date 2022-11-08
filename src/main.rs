@@ -1,3 +1,4 @@
+#[derive(Copy, Clone)]
 pub struct Adaline {
     w: [f64; 2],
     x: [[f64; 4]; 2],
