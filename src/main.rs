@@ -56,7 +56,7 @@ impl Adaline {
             for i in 0..4 {
                 y_interm = self.propaga(i);
 
-                self.y = self.f(y_interm);
+                self.y = Adaline::f(y_interm);
 
                 self.atualiza_pesos(i, y_interm);
 
@@ -100,14 +100,14 @@ impl Adaline {
     }
     */
 
-    fn apresenta_resultados(self) -> () {
+    fn apresenta_resultados(&mut self) -> () {
         for l in 0..4 {
             println!(
                 "{} -th x[0]= {} ; x[1]= {} ; saida = {}",
                 l,
                 self.x[l][0],
                 self.x[l][0],
-                self.f(self.propaga(l))
+                Adaline::f(self.propaga(l))
             );
         }
     }
@@ -118,7 +118,7 @@ impl Adaline {
         }
     }
 
-    fn f(&self, arg: f64) -> f64 {
+    fn f(arg: f64) -> f64 {
         tanh(arg * GANHO)
     }
 }
