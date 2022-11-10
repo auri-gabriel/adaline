@@ -106,7 +106,7 @@ impl Adaline {
                 "{} -th x[0]= {} ; x[1]= {} ; saida = {}",
                 l,
                 self.x[l][0],
-                self.x[l][0],
+                self.x[l][1],
                 Adaline::f(self.propaga(l))
             );
         }
