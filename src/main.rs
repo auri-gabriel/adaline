@@ -62,7 +62,7 @@ impl Adaline {
 
                 self.atualiza_pesos(i, y_interm);
 
-                if self.y >= self.d[i] {
+                if self.y == self.d[i] {
                     hits += 1;
                 } else {
                     self.atualiza_bias(i);
