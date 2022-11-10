@@ -65,12 +65,13 @@ impl Adaline {
                 if self.y == self.d[i] {
                     hits += 1;
                 } else {
-                    self.atualiza_bias(i);
+                    self.atualiza_bias(i, y_interm);
                 }
             }
 
             if hits == 4 {
-                println!("Aprendizado concluido com {} iterações", k)
+                println!("Aprendizado concluido com {} iterações", k);
+                break;
             }
         }
     }
