@@ -130,10 +130,11 @@ impl Adaline {
 fn main() {
     let and = [-1., 1., -1., -1.];
     let or = [-1., 1., 1., 1.];
+    let xor = [-1., -1., 1., 1.];
 
     let mut adaline = Adaline::new();
 
-    adaline.cria_treinamento(or);
+    adaline.cria_treinamento(and);
     adaline.treinamento(1000000);
     adaline.apresenta_resultados();
 }
