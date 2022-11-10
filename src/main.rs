@@ -53,6 +53,8 @@ impl Adaline {
         for k in 1..maxiterates {
             let mut hits: i32 = 0;
 
+            print!("It= {}", k);
+
             for i in 0..4 {
                 y_interm = self.propaga(i);
 
