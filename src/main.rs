@@ -88,7 +88,7 @@ impl Adaline {
 
     fn atualiza_pesos(&mut self, i: usize, y_res: f64) -> () {
         for j in 0..2 {
-            self.w[j] += self.eta * (self.t[j] - y_res) * self.x[i][j];
+            self.w[j] += self.eta * (self.t[i] - y_res) * self.x[i][j];
         }
     }
 
