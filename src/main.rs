@@ -92,8 +92,9 @@ impl Adaline {
         }
     }
 
-    fn atualiza_bias(&mut self, i: usize) -> () {
-        self.b += self.eta * (self.t[i] - 0.);
+    fn atualiza_bias(&mut self, i: usize, y_res: f64) -> () {
+        //b+=(t[i]-y_res)*eta;
+        self.b += (self.t[i] - y_res) * self.eta;
     }
     /*
     void Adaline::Apresenta_Resultados()
