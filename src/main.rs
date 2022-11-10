@@ -50,7 +50,7 @@ impl Adaline {
     fn treinamento(&mut self, maxiterates: i32) -> () {
         let mut y_interm: f64;
 
-        for k in 0..maxiterates {
+        for k in 1..maxiterates {
             let mut hits: i32 = 0;
 
             for i in 0..4 {
