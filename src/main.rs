@@ -73,14 +73,14 @@ impl Adaline {
         }
     }
 
-    fn propaga(&mut self, i: usize) -> f64 {
-        self.soma = 0.;
+    fn propaga(self, i: usize) -> f64 {
+        let mut soma = 0.;
 
         for j in 0..2 {
-            self.soma += self.x[i][j] * self.w[j];
+            soma += self.x[i][j] * self.w[j];
         }
 
-        self.soma + self.b
+        soma + self.b
     }
 
     fn atualiza_pesos(&mut self, i: usize, y_res: f64) -> () {
