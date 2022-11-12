@@ -53,7 +53,7 @@ impl Adaline {
         for k in 1..maxiterates {
             let mut hits: i32 = 0;
 
-            println!("It = {}", k);
+            //println!("It = {}", k);
 
             for i in 0..4 {
                 y_interm = self.propaga(i);
@@ -70,7 +70,7 @@ impl Adaline {
             }
 
             if hits == 4 {
-                println!("Aprendizado concluido com {} iterações", k);
+                //println!("Aprendizado concluido com {} iterações", k);
                 break;
             }
         }
