@@ -1,6 +1,6 @@
 mod adaline;
 
-fn main() -> std::io::Result<()> {
+fn main() {
     let and = [-1., 1., -1., -1.];
     let or = [-1., 1., 1., 1.];
     let xor = [-1., -1., 1., 1.];
@@ -28,6 +28,4 @@ fn main() -> std::io::Result<()> {
         }
         x1 += 0.01;
     }
-
-    Ok(())
 }
