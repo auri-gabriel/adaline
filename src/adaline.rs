@@ -87,7 +87,7 @@ impl Adaline {
     }
 
     pub(crate) fn propaga2(self, x1: f64, x2: f64) -> f64 {
-        let mut soma = 0.;
+        let soma: f64;
 
         soma = x1 * self.w[0] + x2 * self.w[1];
 
